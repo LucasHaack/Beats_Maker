@@ -1,0 +1,205 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+:root {
+    --ff-primary: 'Source Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+    
+    --fw-reg: 300;
+    --fw-bold: 900;
+    
+    --clr-green: #25d302;
+    --clr-blue: #003afa;
+    --clr-red: #d30000;
+    --clr-purple: #640057;
+    
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --btn-height: 7em;
+    --btn-width: 7.5em;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+          0.125em 0.125em 0.25em rgba(0,0,0,.15);
+}
+
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+body {
+  background-color: black;
+  background-image: url("placeholder-studio.jpg");
+  margin: 0;
+  line-height: 1.6;
+}
+
+.wrapper {
+    position: fixed;/*This to margin-left might be wonky*/
+    top: 10%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -225px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    column-gap: 15px;
+    row-gap: 10px;
+
+    place-items: center;
+    background: rgb(97, 97, 97, .75);
+    border: solid rgb(97, 97, 97, .75);
+    border-radius: 15px;
+    padding: 2em;
+ }
+
+/*Individual colored buttons*/
+
+/*Green*/
+  .greenOneBtn{
+    background: var(--clr-green);
+    grid-column: 1 / 2;
+    grid-row: 1;
+
+    padding-right: 1em;
+  }
+  .greenTwoBtn{
+    background: var(--clr-green);
+    grid-column: 2 / 3;
+    grid-row: 1;
+  }
+  .greenThreeBtn{
+    background: var(--clr-green);
+    grid-column: 3 / 4;
+    grid-row: 1;
+  }
+
+
+  /*Blue*/
+  .blueOneBtn{
+    background: var(--clr-blue);
+    grid-column: 1 / 2;
+    grid-row: 2;
+  }
+  .blueTwoBtn{
+    background: var(--clr-blue);
+    grid-column: 2 / 3;
+    grid-row: 2;
+  }
+  .blueThreeBtn{
+    background: var(--clr-blue);
+    grid-column: 3 / 4;
+    grid-row: 2;
+  }
+
+
+  /*Red*/
+  .redOneBtn{
+    background: var(--clr-red);
+    grid-column: 1 / 2;
+    grid-row: 3;
+  }
+  .redTwoBtn{
+    background: var(--clr-red);
+    grid-column: 2 / 3;
+    grid-row: 3;
+  }
+  .redThreeBtn{
+    background: var(--clr-red);
+    grid-column: 3 / 4;
+    grid-row: 3;
+  }
+
+
+  /*Purple*/
+  .purpleOneBtn{
+    background: var(--clr-purple);
+    grid-column: 1 / 2;
+    grid-row: 4;
+  }
+  .purpleTwoBtn{
+    background: var(--clr-purple);
+    grid-column: 2 / 3;
+    grid-row: 4
+  }
+  .purpleThreeBtn{
+    background: var(--clr-purple);
+    grid-column: 3 / 4;
+    grid-row: 4;
+  }
+
+/*All Colored Buttons*/
+.greenOneBtn,
+.greenTwoBtn,
+.greenThreeBtn,
+
+.blueOneBtn,
+.blueTwoBtn,
+.blueThreeBtn,
+
+.redOneBtn,
+.redTwoBtn,
+.redThreeBtn,
+
+.purpleOneBtn,
+.purpleTwoBtn,
+.purpleThreeBtn{
+    height: var(--btn-height);
+    width: var(--btn-width);
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+/*Button Effects*/
+.greenOneBtn:hover,
+.greenTwoBtn:hover,
+.greenThreeBtn:hover{
+  background: rgb(11, 255, 11);
+}
+
+.blueOneBtn:hover,
+.blueTwoBtn:hover,
+.blueThreeBtn:hover{
+  background: rgb(0, 162, 255);
+}
+
+.redOneBtn:hover,
+.redTwoBtn:hover,
+.redThreeBtn:hover{
+  background: rgb(253, 8, 49);
+}
+
+.purpleOneBtn:hover,
+.purpleTwoBtn:hover,
+.purpleThreeBtn:hover{
+    background: rgb(206, 1, 206);
+}
+
+.greenOneBtn:active,
+.greenTwoBtn:active,
+.greenThreeBtn:active,
+
+.blueOneBtn:active,
+.blueTwoBtn:active,
+.blueThreeBtn:active,
+
+.redOneBtn:active,
+.redTwoBtn:active,
+.redThreeBtn:active,
+
+.purpleOneBtn:active,
+.purpleTwoBtn:active,
+.purpleThreeBtn:active{
+  transform: scale(1.125);
+  transition: transform .15s ease-out;
+}
