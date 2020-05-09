@@ -1,5 +1,8 @@
 //Right now numbers 1,2,3,4 are assigned to audioOne, audioTwo, etc. Change variable names at some point. Probably something like guitarTapOne
 
+
+// Add onclick functions
+
 let audioOne = new Audio("./Audio_Assets/guitar_one.mp3");
 let audioTwo = new Audio("./Audio_Assets/guitar_two.mp3");
 let audioThree = new Audio("./Audio_Assets/guitar_three.mp3");
