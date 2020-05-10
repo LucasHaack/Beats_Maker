@@ -31,6 +31,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
+  /*justify-items: center;*/
 
   background-color: black;
   background-image: url("placeholder-studio.jpg");
@@ -38,7 +39,7 @@ body {
   margin: 0;
   line-height: 1.6;
 
-  margin-top: 15%;;
+  margin-top: 5%;
   
 }
 
@@ -53,13 +54,12 @@ body {
     column-gap: 5px;
     row-gap: 10px;
 
-    /*place-items: center;*/
     background: rgb(97, 97, 97, .75);
     border: solid rgb(97, 97, 97, .75);
     border-radius: 15px;
     padding: 2em;
 
-    max-width: 500px;
+    max-width: 450px;
  }
 
 /*Individual colored buttons*/
