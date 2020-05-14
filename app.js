@@ -1,13 +1,148 @@
-//Right now numbers 1,2,3,4 are assigned to audioOne, audioTwo, etc. Change variable names at some point. Probably something like guitarTapOne
+//Change variable names at some point. Probably something like guitarTapOne
 
 
-// Add onclick functions
+//Variable names
 
+//Green variable names
+let greenOne = document.getElementById("greenOne");
+let greenTwo = document.getElementById("greenTwo");
+let greenThree = document.getElementById("greenThree");
+
+//Blue variable names
+let blueOne = document.getElementById("blueOne");
+let blueTwo = document.getElementById("blueTwo");
+let blueThree = document.getElementById("blueThree");
+
+//Red variable names
+let redOne = document.getElementById("redOne");
+let redTwo = document.getElementById("redTwo");
+let redThree = document.getElementById("redThree");
+
+//Purple variable names
+let purpleOne = document.getElementById("purpleOne");
+let purpleTwo = document.getElementById("purpleTwo");
+let purpleThree = document.getElementById("purpleThree");
+
+
+//Audio Variables
 let audioOne = new Audio("./Audio_Assets/guitar_one.mp3");
 let audioTwo = new Audio("./Audio_Assets/guitar_two.mp3");
 let audioThree = new Audio("./Audio_Assets/guitar_three.mp3");
 let audioFour = new Audio("./Audio_Assets/guitar_four.mp3");
-//audioOne.play();
+
+
+//Green mousedown/mouseup
+greenOne.addEventListener('mousedown', e => {
+  audioOne.play();
+});
+
+greenOne.addEventListener('mouseup', e => {
+  audioOne.pause();
+  audioOne.currentTime = 0;
+});
+
+greenTwo.addEventListener('mousedown', e => {
+  audioOne.play();
+});
+
+greenTwo.addEventListener('mouseup', e => {
+  audioOne.pause();
+  audioOne.currentTime = 0;
+});
+
+greenThree.addEventListener('mousedown', e => {
+  audioOne.play();
+});
+
+greenThree.addEventListener('mouseup', e => {
+  audioOne.pause();
+  audioOne.currentTime = 0;
+});
+
+//Blue mousedown/mouseup
+blueOne.addEventListener('mousedown', e => {
+  audioOne.play();
+});
+
+blueOne.addEventListener('mouseup', e => {
+  audioOne.pause();
+  audioOne.currentTime = 0;
+});
+
+blueTwo.addEventListener('mousedown', e => {
+  audioOne.play();
+});
+
+blueTwo.addEventListener('mouseup', e => {
+  audioOne.pause();
+  audioOne.currentTime = 0;
+});
+
+blueThree.addEventListener('mousedown', e => {
+  audioOne.play();
+});
+
+blueThree.addEventListener('mouseup', e => {
+  audioOne.pause();
+  audioOne.currentTime = 0;
+});
+
+//Red mousedown/mouseup
+redOne.addEventListener('mousedown', e => {
+  audioOne.play();
+});
+
+redOne.addEventListener('mouseup', e => {
+  audioOne.pause();
+  audioOne.currentTime = 0;
+});
+
+redTwo.addEventListener('mousedown', e => {
+  audioOne.play();
+});
+
+redTwo.addEventListener('mouseup', e => {
+  audioOne.pause();
+  audioOne.currentTime = 0;
+});
+
+redThree.addEventListener('mousedown', e => {
+  audioOne.play();
+});
+
+redThree.addEventListener('mouseup', e => {
+  audioOne.pause();
+  audioOne.currentTime = 0;
+});
+
+
+//Purple mousedown/mouseup
+purpleOne.addEventListener('mousedown', e => {
+  audioOne.play();
+});
+
+purpleOne.addEventListener('mouseup', e => {
+  audioOne.pause();
+  audioOne.currentTime = 0;
+});
+
+purpleTwo.addEventListener('mousedown', e => {
+  audioOne.play();
+});
+
+purpleTwo.addEventListener('mouseup', e => {
+  audioOne.pause();
+  audioOne.currentTime = 0;
+});
+
+purpleThree.addEventListener('mousedown', e => {
+  audioOne.play();
+});
+
+purpleThree.addEventListener('mouseup', e => {
+  audioOne.pause();
+  audioOne.currentTime = 0;
+});
 
 //Key Down
 window.addEventListener("keydown", function (event) {

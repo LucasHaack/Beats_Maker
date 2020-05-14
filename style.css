@@ -27,40 +27,39 @@
           0.125em 0.125em 0.25em rgba(0,0,0,.15);
 }
 
-@media (min-width: 800px) {
-    :root {
-        --fs-h1: 4.5rem;
-        --fs-h2: 3.75rem;
-        --fs-h3: 1.5rem;
-        --fs-body: 1.125rem;
-    }
-}
-
 body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  /*justify-items: center;*/
+
   background-color: black;
   background-image: url("placeholder-studio.jpg");
+  background-size: cover;
   margin: 0;
   line-height: 1.6;
+
+  margin-top: 5%;
+  
 }
 
 .wrapper {
-    position: fixed;/*This to margin-left might be wonky*/
-    top: 10%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -225px;
+
+    grid-column: 2;
 
     display: grid;
+    align-items: center;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    column-gap: 15px;
+    column-gap: 5px;
     row-gap: 10px;
 
-    place-items: center;
     background: rgb(97, 97, 97, .75);
     border: solid rgb(97, 97, 97, .75);
     border-radius: 15px;
     padding: 2em;
+
+    max-width: 450px;
  }
 
 /*Individual colored buttons*/
