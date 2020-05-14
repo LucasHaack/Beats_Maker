@@ -1,4 +1,6 @@
-//Change variable names at some point. Probably something like guitarTapOne
+//https://github.com/webrtc/samples/blob/gh-pages/src/content/getusermedia/record/js/main.js
+//add recording feature via link above
+//probably change to onkeydown?
 
 
 //Variable names
