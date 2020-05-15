@@ -5,6 +5,10 @@
 
 //Variable names
 
+//Recording related variables
+let recordBtn = document.getElementById("recordBtn");
+let recordingTimeMS = 60000; //One minute of recording time
+
 //Green variable names
 let greenOne = document.getElementById("greenOne");
 let greenTwo = document.getElementById("greenTwo");
@@ -32,6 +36,10 @@ let audioTwo = new Audio("./Audio_Assets/guitar_two.mp3");
 let audioThree = new Audio("./Audio_Assets/guitar_three.mp3");
 let audioFour = new Audio("./Audio_Assets/guitar_four.mp3");
 
+//Record Mousedown
+recordBtn.addEventListener('mousedown', e => {
+  console.log("RecordBtn Clicked!")
+});
 
 //Green mousedown/mouseup
 greenOne.addEventListener('mousedown', e => {
