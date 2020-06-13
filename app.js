@@ -1,7 +1,8 @@
-//https://github.com/webrtc/samples/blob/gh-pages/src/content/getusermedia/record/js/main.js
+//https://hacks.mozilla.org/2016/04/record-almost-everything-in-the-browser-with-mediarecorder/
 //add recording feature via link above
 //probably change to onkeydown?
 
+//recording a DOM Element
 
 //Variable names
 
