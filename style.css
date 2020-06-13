@@ -213,3 +213,7 @@ body {
   transform: scale(1.125);
   transition: transform .15s ease-out;
 }
+
+.recordBtn{
+  display: none;
+}
