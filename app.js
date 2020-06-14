@@ -1,8 +1,10 @@
 //https://hacks.mozilla.org/2016/04/record-almost-everything-in-the-browser-with-mediarecorder/
 //add recording feature via link above
-//probably change to onkeydown?
 
-//recording a DOM Element
+
+//fetch();
+
+import * as Tone from "tone";
 
 //Variable names
 
@@ -36,6 +38,11 @@ let audioOne = new Audio("./Audio_Assets/guitar_one.mp3");
 let audioTwo = new Audio("./Audio_Assets/guitar_two.mp3");
 let audioThree = new Audio("./Audio_Assets/guitar_three.mp3");
 let audioFour = new Audio("./Audio_Assets/guitar_four.mp3");
+
+//create a synth and connect it to the master output (your speakers)
+const synth = new Tone.Synth().toMaster();
+
+
 
 //Record Mousedown
 recordBtn.addEventListener('mousedown', e => {
@@ -165,6 +172,9 @@ document.addEventListener('keydown', function(event) {
     purpleOne.style.scale="1.125";
     purpleOne.style.transitionDuration=".15s";
     console.log("0");
+
+    //play a middle 'C' for the duration of an 8th note
+synth.triggerAttackRelease("C4", "8n");
   }
 
   if (event.code == 'NumpadDecimal') {
