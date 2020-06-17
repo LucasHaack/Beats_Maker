@@ -4,7 +4,7 @@
 
 //fetch();
 
-import * as Tone from "tone";
+import * as Tone from "tone.js";//This maybe should be "tone"?
 
 //Variable names
 
@@ -174,8 +174,8 @@ document.addEventListener('keydown', function(event) {
     console.log("0");
 
     //play a middle 'C' for the duration of an 8th note
-synth.triggerAttackRelease("C4", "8n");
-  }
+    synth.triggerAttackRelease("C4", "8n");
+}
 
   if (event.code == 'NumpadDecimal') {
     purpleTwo.style.background = "rgb(206, 1, 206)";
