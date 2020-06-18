@@ -4,7 +4,8 @@
 
 //fetch();
 
-import * as Tone from "tone.js";//This maybe should be "tone"?
+// import * as Tone from "tone";//This maybe should be "tone"?
+
 
 //Variable names
 
@@ -40,7 +41,7 @@ let audioThree = new Audio("./Audio_Assets/guitar_three.mp3");
 let audioFour = new Audio("./Audio_Assets/guitar_four.mp3");
 
 //create a synth and connect it to the master output (your speakers)
-const synth = new Tone.Synth().toMaster();
+// const synth = new Tone.Synth().toMaster();
 
 
 
