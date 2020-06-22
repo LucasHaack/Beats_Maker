@@ -1,11 +1,15 @@
-//https://hacks.mozilla.org/2016/04/record-almost-everything-in-the-browser-with-mediarecorder/
-//add recording feature via link above
-
-
-//fetch();
-
-// import * as Tone from "tone";//This maybe should be "tone"?
-
+// const makeButtonObject = (elem) => {
+//   elem.addEventListener( //mousedown)
+//   elem.addEventListener(//mouseup)
+// };
+// <button id="audioOne" class="audioButton">Green One </button>
+// document.getElementsByClassName("audioButton");
+// foreach(let btn in col){
+//   const id = btn.getId();
+//   btn.addEventListener(//first one, use id to match with the kind of audio you want to play);
+//   btn.addEventListener(//second one);
+// }
+// Like maybe create an object that has like, audioOne, audioTwo, etc... and do lookups based on that
 
 //Variable names
 
@@ -40,10 +44,17 @@ let audioTwo = new Audio("./Audio_Assets/guitar_two.mp3");
 let audioThree = new Audio("./Audio_Assets/guitar_three.mp3");
 let audioFour = new Audio("./Audio_Assets/guitar_four.mp3");
 
+
+//Synth Variables
 //create a synth and connect it to the master output (your speakers)
-// const synth = new Tone.Synth().toMaster();
+const synth = new Tone.Synth().toMaster();
+const duoSynth = new Tone.DuoSynth().toMaster();
+const fmSynth = new Tone.FMSynth().toMaster();//This is a gross noise. (I probably don't know how to set it up to sound nice)
+const metalSynth = new Tone.MetalSynth().toMaster();//Not working super well?
+const amSynth = new Tone.AMSynth().toMaster();//Funky sound
 
-
+//Oscillator Variables
+const osc = new Tone.Oscillator(440, "sine").toMaster();
 
 //Record Mousedown
 recordBtn.addEventListener('mousedown', e => {
@@ -175,7 +186,7 @@ document.addEventListener('keydown', function(event) {
     console.log("0");
 
     //play a middle 'C' for the duration of an 8th note
-    synth.triggerAttackRelease("C4", "8n");
+    synth.triggerAttackRelease("b1", "6n");
 }
 
   if (event.code == 'NumpadDecimal') {
@@ -183,6 +194,8 @@ document.addEventListener('keydown', function(event) {
     purpleTwo.style.scale="1.125";
     purpleTwo.style.transitionDuration=".15s";
     console.log(".");
+
+    synth.triggerAttackRelease("b2", "6n");
   }
 //this probably won't work
   if (event.key == 'Enter') {
@@ -190,6 +203,8 @@ document.addEventListener('keydown', function(event) {
     purpleThree.style.scale="1.125";
     purpleThree.style.transitionDuration=".15s";
     console.log("Enter");
+
+    synth.triggerAttackRelease("a2", "6n");
   }
 
 
@@ -201,7 +216,7 @@ document.addEventListener('keydown', function(event) {
     redOne.style.transitionDuration=".15s";
     console.log("1");
 
-    audioOne.play();
+    duoSynth.triggerAttackRelease("C4", "2n");
   }
 
   if (event.code == 'Numpad2') {
@@ -210,7 +225,7 @@ document.addEventListener('keydown', function(event) {
     redTwo.style.transitionDuration=".15s";
     console.log("2");
 
-    audioTwo.play();
+    duoSynth.triggerAttackRelease("b4", "2n");
   }
 
   if (event.code == 'Numpad3') {
@@ -219,7 +234,7 @@ document.addEventListener('keydown', function(event) {
     redThree.style.transitionDuration=".15s";
     console.log("3");
 
-    audioThree.play();
+    duoSynth.triggerAttackRelease("a4", "2n");
   }
 
 
@@ -230,7 +245,10 @@ document.addEventListener('keydown', function(event) {
     blueOne.style.transitionDuration=".15s";
     console.log("4");
 
-    audioFour.play();
+    //osc.start(); find out how to stop this
+
+  
+
   }
 
   if (event.code == 'Numpad5') {
@@ -239,7 +257,8 @@ document.addEventListener('keydown', function(event) {
     blueTwo.style.transitionDuration=".15s";
     console.log("5");
 
-    audioFour.play();
+    fmSynth.triggerAttackRelease("C5", "4n");
+
   }
 
   if (event.code == 'Numpad6') {
@@ -247,6 +266,9 @@ document.addEventListener('keydown', function(event) {
     blueThree.style.scale="1.125";
     blueThree.style.transitionDuration=".15s";
     console.log("6");
+
+    fmSynth.triggerAttackRelease("C5", "4n");
+
   }
 
   //Green Buttons Key Down
@@ -255,6 +277,8 @@ document.addEventListener('keydown', function(event) {
     greenOne.style.scale="1.125";
     greenOne.style.transitionDuration=".15s";
     console.log("7");
+
+    synth.triggerAttackRelease("C4", "8n");
   }
   
   if (event.code == 'Numpad8') {
@@ -262,12 +286,16 @@ document.addEventListener('keydown', function(event) {
     greenTwo.style.scale="1.125";
     greenTwo.style.transitionDuration=".15s";
     console.log("8");
+
+    synth.triggerAttackRelease("C4", "8n");
   }
   if (event.code == 'Numpad9') {
     greenThree.style.background = "rgb(11, 255, 11)";
     greenThree.style.scale="1.125";
     greenThree.style.transitionDuration=".15s";
     console.log("9");
+
+    synth.triggerAttackRelease("C4", "8n");
   }
 
 });
@@ -281,6 +309,9 @@ document.addEventListener('keyup', function(event) {
     purpleOne.style.background = "#640057";
     purpleOne.style.scale="1"
     console.log("Numpad0 up")
+
+    // synth.pause;
+    // synth.currentTime = 0;
   }
 
   if (event.code == 'NumpadDecimal') {
@@ -303,8 +334,7 @@ document.addEventListener('keyup', function(event) {
     redOne.style.scale="1"
     console.log("Numpad1 up")
 
-    audioOne.pause();
-    audioOne.currentTime = 0;
+    duoSynth.triggerRelease()
   }
 
   if (event.code == 'Numpad2') {
@@ -312,8 +342,7 @@ document.addEventListener('keyup', function(event) {
     redTwo.style.scale="1"
     console.log("Numpad2 up")
 
-    audioTwo.pause();
-    audioTwo.currentTime = 0;
+    duoSynth.triggerRelease()
   }
 
   if (event.code == 'Numpad3') {
@@ -321,8 +350,7 @@ document.addEventListener('keyup', function(event) {
     redThree.style.scale="1"
     console.log("Numpad3 up")
 
-    audioThree.pause();
-    audioThree.currentTime = 0;
+    duoSynth.triggerRelease()
   }
 
 
@@ -332,8 +360,7 @@ document.addEventListener('keyup', function(event) {
     blueOne.style.scale="1"
     console.log("Numpad4 up")
 
-    audioFour.pause();
-    audioFour.currentTime = 0;
+
   }
 
   if (event.code == 'Numpad5') {
