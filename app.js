@@ -54,7 +54,28 @@ const metalSynth = new Tone.MetalSynth().toMaster();//Not working super well?
 const amSynth = new Tone.AMSynth().toMaster();//Funky sound
 
 //Oscillator Variables
-const osc = new Tone.Oscillator(440, "sine").toMaster();
+const oscA = new Tone.Oscillator(440, "sawtooth2").toMaster();
+const oscB = new Tone.Oscillator(440, "sine").toMaster();
+
+const synthA = new Tone.Synth({
+  "oscillator" : {
+    "type" : "amtriangle",
+    "harmonicity" : 0.5,
+    "modulationType" : "sawtooth"
+  },
+  "envelope" : {
+    "attackCurve" : "exponential",
+    "attack" : 0.2,
+    "decay" : 1.2,
+    "sustain" : 0.4,
+    "release" : 1.5,
+  },
+  "portamento" : 0.05
+}).toMaster();
+
+// reverb
+const reverb = new Tone.Reverb().toMaster();
+
 
 //Record Mousedown
 recordBtn.addEventListener('mousedown', e => {
@@ -245,7 +266,8 @@ document.addEventListener('keydown', function(event) {
     blueOne.style.transitionDuration=".15s";
     console.log("4");
 
-    //osc.start(); find out how to stop this
+    oscA.start();
+    
 
   
 
@@ -257,7 +279,7 @@ document.addEventListener('keydown', function(event) {
     blueTwo.style.transitionDuration=".15s";
     console.log("5");
 
-    fmSynth.triggerAttackRelease("C5", "4n");
+    synthA.triggerAttackRelease("c6", "16n");
 
   }
 
@@ -360,7 +382,7 @@ document.addEventListener('keyup', function(event) {
     blueOne.style.scale="1"
     console.log("Numpad4 up")
 
-
+    oscA.stop();
   }
 
   if (event.code == 'Numpad5') {
@@ -368,8 +390,7 @@ document.addEventListener('keyup', function(event) {
     blueTwo.style.scale="1"
     console.log("Numpad5 up")
 
-    audioFour.pause();
-    audioFour.currentTime = 0;
+    synthA.triggerRelease();
   }
 
   if (event.code == 'Numpad6') {
