@@ -200,7 +200,7 @@ purpleThree.addEventListener('mouseup', e => {
 document.addEventListener('keydown', function(event) {
 
   //Purple Buttons Key Down
-  if (event.code == 'Numpad0') {
+   if (event.code == 'Numpad0' || event.code == 'KeyZ') {
     purpleOne.style.background = "rgb(206, 1, 206)";
     purpleOne.style.scale="1.125";
     purpleOne.style.transitionDuration=".15s";
@@ -210,7 +210,7 @@ document.addEventListener('keydown', function(event) {
     synth.triggerAttackRelease("b1", "6n");
 }
 
-  if (event.code == 'NumpadDecimal') {
+  if (event.code == 'NumpadDecimal'|| event.code == 'KeyX') {
     purpleTwo.style.background = "rgb(206, 1, 206)";
     purpleTwo.style.scale="1.125";
     purpleTwo.style.transitionDuration=".15s";
@@ -219,7 +219,7 @@ document.addEventListener('keydown', function(event) {
     synth.triggerAttackRelease("b2", "6n");
   }
 //this probably won't work
-  if (event.key == 'Enter') {
+  if (event.key == 'Enter'|| event.code == 'KeyC') {
     purpleThree.style.background = "rgb(206, 1, 206)";
     purpleThree.style.scale="1.125";
     purpleThree.style.transitionDuration=".15s";
@@ -230,7 +230,7 @@ document.addEventListener('keydown', function(event) {
 
 
   //Red Buttons Key Down
-  if (event.code == 'Numpad1') {
+  if (event.code == 'Numpad1' || event.code == 'KeyA') {
 
     redOne.style.background = "rgb(253, 8, 49)";
     redOne.style.scale="1.125";
@@ -240,7 +240,7 @@ document.addEventListener('keydown', function(event) {
     duoSynth.triggerAttackRelease("C4", "2n");
   }
 
-  if (event.code == 'Numpad2') {
+  if (event.code == 'Numpad2'|| event.code == 'KeyS') {
     redTwo.style.background = "rgb(253, 8, 49)";
     redTwo.style.scale="1.125";
     redTwo.style.transitionDuration=".15s";
@@ -249,7 +249,7 @@ document.addEventListener('keydown', function(event) {
     duoSynth.triggerAttackRelease("b4", "2n");
   }
 
-  if (event.code == 'Numpad3') {
+  if (event.code == 'Numpad3'|| event.code == 'KeyD') {
     redThree.style.background = "rgb(253, 8, 49)";
     redThree.style.scale="1.125";
     redThree.style.transitionDuration=".15s";
@@ -260,7 +260,7 @@ document.addEventListener('keydown', function(event) {
 
 
   //Blue Buttons Key Down
-  if (event.code == 'Numpad4') {
+  if (event.code == 'Numpad4'|| event.code == 'KeyQ') {
     blueOne.style.background = "rgb(0, 162, 255)";
     blueOne.style.scale="1.125";
     blueOne.style.transitionDuration=".15s";
@@ -268,12 +268,9 @@ document.addEventListener('keydown', function(event) {
 
     oscA.start();
     
-
-  
-
   }
 
-  if (event.code == 'Numpad5') {
+  if (event.code == 'Numpad5'|| event.code == 'KeyW') {
     blueTwo.style.background = "rgb(0, 162, 255)";
     blueTwo.style.scale="1.125";
     blueTwo.style.transitionDuration=".15s";
@@ -283,7 +280,7 @@ document.addEventListener('keydown', function(event) {
 
   }
 
-  if (event.code == 'Numpad6') {
+  if (event.code == 'Numpad6'|| event.code == 'KeyE') {
     blueThree.style.background = "rgb(0, 162, 255)";
     blueThree.style.scale="1.125";
     blueThree.style.transitionDuration=".15s";
@@ -294,7 +291,7 @@ document.addEventListener('keydown', function(event) {
   }
 
   //Green Buttons Key Down
-  if (event.code == 'Numpad7') {
+  if (event.code == 'Numpad7'|| event.code == 'Digit1') {
     greenOne.style.background = "rgb(11, 255, 11)";
     greenOne.style.scale="1.125";
     greenOne.style.transitionDuration=".15s";
@@ -303,7 +300,7 @@ document.addEventListener('keydown', function(event) {
     synth.triggerAttackRelease("C4", "8n");
   }
   
-  if (event.code == 'Numpad8') {
+  if (event.code == 'Numpad8'|| event.code == 'Digit2') {
     greenTwo.style.background = "rgb(11, 255, 11)";
     greenTwo.style.scale="1.125";
     greenTwo.style.transitionDuration=".15s";
@@ -311,7 +308,7 @@ document.addEventListener('keydown', function(event) {
 
     synth.triggerAttackRelease("C4", "8n");
   }
-  if (event.code == 'Numpad9') {
+  if (event.code == 'Numpad9'|| event.code == 'Digit3') {
     greenThree.style.background = "rgb(11, 255, 11)";
     greenThree.style.scale="1.125";
     greenThree.style.transitionDuration=".15s";
@@ -327,7 +324,7 @@ document.addEventListener('keydown', function(event) {
 document.addEventListener('keyup', function(event) {
 
   //Purple Buttons Key Up
-  if (event.code == 'Numpad0') {
+  if (event.code == 'Numpad0'  || event.code == 'KeyZ') {
     purpleOne.style.background = "#640057";
     purpleOne.style.scale="1"
     console.log("Numpad0 up")
@@ -336,13 +333,13 @@ document.addEventListener('keyup', function(event) {
     // synth.currentTime = 0;
   }
 
-  if (event.code == 'NumpadDecimal') {
+  if (event.code == 'NumpadDecimal' || event.code == 'KeyX') {
     purpleTwo.style.background = "#640057";
     purpleTwo.style.scale="1"
     console.log(". up")
   }
 
-  if (event.key == "Enter") {
+  if (event.key == "Enter" || event.code == 'KeyC') {
     purpleThree.style.background = "#640057";
     purpleThree.style.scale="1"
     console.log("Enter up")
@@ -350,7 +347,7 @@ document.addEventListener('keyup', function(event) {
 
 
   //Red Buttons Key Up
-  if (event.code == 'Numpad1') {
+  if (event.code == 'Numpad1' || event.code == 'KeyA') {
 
     redOne.style.background = "#d30000";
     redOne.style.scale="1"
@@ -359,7 +356,7 @@ document.addEventListener('keyup', function(event) {
     duoSynth.triggerRelease()
   }
 
-  if (event.code == 'Numpad2') {
+  if (event.code == 'Numpad2' || event.code == 'KeyS') {
     redTwo.style.background = "#d30000";
     redTwo.style.scale="1"
     console.log("Numpad2 up")
@@ -367,7 +364,7 @@ document.addEventListener('keyup', function(event) {
     duoSynth.triggerRelease()
   }
 
-  if (event.code == 'Numpad3') {
+  if (event.code == 'Numpad3' || event.code == 'KeyD') {
     redThree.style.background = "#d30000";
     redThree.style.scale="1"
     console.log("Numpad3 up")
@@ -377,7 +374,7 @@ document.addEventListener('keyup', function(event) {
 
 
   //Blue Buttons Key Up
-  if (event.code == 'Numpad4') {
+  if (event.code == 'Numpad4' || event.code == 'KeyQ') {
     blueOne.style.background = "#003afa";
     blueOne.style.scale="1"
     console.log("Numpad4 up")
@@ -385,7 +382,7 @@ document.addEventListener('keyup', function(event) {
     oscA.stop();
   }
 
-  if (event.code == 'Numpad5') {
+  if (event.code == 'Numpad5' || event.code == 'KeyW') {
     blueTwo.style.background = "#003afa";
     blueTwo.style.scale="1"
     console.log("Numpad5 up")
@@ -393,25 +390,25 @@ document.addEventListener('keyup', function(event) {
     synthA.triggerRelease();
   }
 
-  if (event.code == 'Numpad6') {
+  if (event.code == 'Numpad6' || event.code == 'KeyE') {
     blueThree.style.background = "#003afa";
     blueThree.style.scale="1"
     console.log("Numpad6 up")
   }
 
   //Green Buttons Key Up
-  if (event.code == 'Numpad7') {
+  if (event.code == 'Numpad7' || event.code == 'Digit1') {
     greenOne.style.background = "#25d302";
     greenOne.style.scale="1"
     console.log("Numpad7 up")
   }
   
-  if (event.code == 'Numpad8') {
+  if (event.code == 'Numpad8' || event.code == 'Digit2') {
     greenTwo.style.background = "#25d302";
     greenTwo.style.scale="1"
     console.log("Numpad8 up")
   }
-  if (event.code == 'Numpad9') {
+  if (event.code == 'Numpad9' || event.code == 'Digit3') {
     greenThree.style.background = "#25d302";
     greenThree.style.scale="1"
     console.log("Numpad9 up")
